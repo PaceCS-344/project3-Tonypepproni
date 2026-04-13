@@ -1,0 +1,21 @@
+.socials{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.socialLink{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.icon{
+    font-size: 40px;
+    margin:10px;
+}
+
+#AllMedias{
+    display: flex;
+    flex-direction: column;
+}
