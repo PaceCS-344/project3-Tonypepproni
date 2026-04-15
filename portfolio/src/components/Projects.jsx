@@ -1,4 +1,4 @@
-import SkillTag from "./skillTag"
+import SkillTag from "./SkillTag"
 
 import './../styles/Sections.css'
 

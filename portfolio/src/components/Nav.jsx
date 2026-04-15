@@ -1,18 +1,25 @@
+import { HamburgerMenuOverlay } from "./lightswind/hamburger-menu-overlay"
+
+const menuItems = [
+    {label:"About Me",href:'#aboutMe'},
+    {label:"Skills",href:'#skills'},
+    {label:'Projects',href:'#projects'}
+]
+
 function Nav(){
     return(
         <div id="navBar">
-            <Link word={"About Me"} link={"#aboutMe"}/>
-            <Link word={"Skills"} link={"#skills"}/>
-            <Link word={'Projects'} link={'#projects'}/>
+            <HamburgerMenuOverlay 
+            items={menuItems}
+            buttonTop="30px"
+            buttonLeft="60px"
+            buttonColor="#6b22c5"
+            overlayBackground="#6b22c5"
+            onOpen={() => console.log("Menu opened")}
+            onClose={() => console.log("Menu closed")}
+            />
+            <h3>Nicole Rossi</h3>
         </div>
-    )
-}
-
-function Link({word,link}){
-    return(
-            <a href={link}>
-                <h3>{word}</h3>
-            </a>
     )
 }
 

@@ -1,6 +1,8 @@
+import { InteractiveCard } from './lightswind/interactive-card';
+
 import SkillTag from './SkillTag'
 
-import './../styles/Sections.css'
+import '../styles/Sections.css'
 
 export const skills = [
     {name: 'Langauges & Frameworks',tags:['Python','JavaScripts','C++','Lua','Cobol','ReactJS','HTML5','CSS','BootStrap'],icon:'code'},
@@ -23,14 +25,17 @@ function Skills(){
 
 function SkillSection({skills}){
     return(
-        <div className='SkillCard'>
+        <InteractiveCard 
+        className='SkillCard'
+        InteractiveColor='#9D00FF'
+        >
             <h2>{skills.name}</h2>
             <div className='skillTagRow'>
                 {skills.tags.map((tag,index)=>(
                     <SkillTag key={index} skill={tag}/>
                 ))}
             </div>
-        </div>
+        </InteractiveCard>
     )
 }
 
