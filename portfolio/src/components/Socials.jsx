@@ -13,9 +13,11 @@ function Socials(){
     return(
         <div id='AllMedias'>
             <h4>Socials</h4>
-            {socials.map((social,index)=>(
-                <Card key={index}social={social}/>
-            ))}
+            <div id='allSocials'>
+                {socials.map((social,index)=>(
+                    <Card key={index}social={social}/>
+                ))}
+            </div>
         </div>
     )
 }

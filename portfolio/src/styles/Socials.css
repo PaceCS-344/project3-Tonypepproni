@@ -1,6 +1,6 @@
 .socials{
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
 }
 
@@ -17,5 +17,12 @@
 
 #AllMedias{
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#allSocials{
+    display: flex;
+    justify-content: center;
     flex-direction: column;
 }

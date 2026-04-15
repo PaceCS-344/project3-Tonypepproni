@@ -4,13 +4,19 @@ import './../styles/Sections.css'
 
 function About(){
     return(
-        <>
-        <h2>About Me</h2>
-        <div className='aboutMe'>
-            <h3>NicoleRossiReach@gmail.com</h3>
-            <Socials />
+        <div id='aboutMe'>
+            <h2>About Me</h2>
+            <div id='row'>
+                <div id='personal'>
+                    <h3>Img</h3>
+                    <p>Blurb</p>
+                </div>
+                <div id='socCon'>
+                    <h3>NicoleRossiReach@gmail.com</h3>
+                    <Socials />
+                </div>
+            </div>
         </div>
-        </>
     )
 }
 

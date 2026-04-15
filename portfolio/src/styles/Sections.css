@@ -1,8 +1,69 @@
-.aboutMe{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+#aboutMe, #projects, #skills{
     width: 90vw;
     margin: 40px;
-    height:100vh;
+    min-height:100svh;
+    padding-top: 60px;
+}
+#aboutMe{
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: center;
+}
+#aboutMe #row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
+    
+    width: 100%;
+}
+
+#aboutMe #row #personal, #aboutMe #row #socCon{
+    width: 40svw;
+}
+
+
+
+#skills .SkillCard {
+    width: 80svw;
+    border: 1px solid blue;
+    border-radius: 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 30px;
+    margin: 60px;
+}
+
+#skills .SkillCard .skillTagRow {
+    display: flex;
+    flex-direction: row;
+}
+
+#projects #ProjCard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#projects #ProjCard .Card {
+    border: 1px solid white;
+    border-radius: 25px;
+
+    width: 33%;
+    height: 300px;
+    margin: 50px;
+    padding: 20px;
+}
+
+#projects #ProjCard .Card .TagRow{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }

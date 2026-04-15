@@ -1,5 +1,7 @@
 import SkillTag from "./skillTag"
 
+import './../styles/Sections.css'
+
 export const projects = [
     {name:'Tidal Hudson',desc:'A backend to pull and clean data from the USGS to be used by a unity app',tags:['Python','Jira','USGS API'],repoLink:'https://github.com/Tonypepproni/Tidal-Estuary'},
     {name:'Water Reports API',desc:'An API to access data from paces Water Report MariaDB',tags:['FastAPI','MariaDB','Python'],repoLink:null},
@@ -11,24 +13,28 @@ export const projects = [
 
 function Projects(){
     return(
-        <>
+        <div id="projects">
             <h2>Projects</h2>
-            {projects.map((project,index)=>(
-                <Card key={index} project={project} />
-            ))}
-        </>
+            <div id="ProjCard">
+                {projects.map((project,index)=>(
+                    <Card key={index} project={project} />
+                ))}
+            </div>
+        </div>
     )
 }
 
 function Card({project}){
     return(
-    <div>
+    <div className="Card">
         <h3>{project.name}</h3>
         <p>{project.desc}</p>
         <a href={project.repoLink}>Github</a>
-        {project.tags.map((tag,index)=>(
-            <SkillTag key={index} skill={tag} />
-        ))}
+        <div className="TagRow">
+            {project.tags.map((tag,index)=>(
+                <SkillTag key={index} skill={tag} />
+            ))}
+        </div>
     </div>
     )
 }

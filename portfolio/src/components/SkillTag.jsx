@@ -1,3 +1,5 @@
+import './../styles/tag.css'
+
 function SkillTag({skill}){
     return(
         <div className="tag">
