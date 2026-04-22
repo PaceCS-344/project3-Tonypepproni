@@ -1,6 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faInstagram, faLinkedin} from "@fortawesome/free-brands-svg-icons"
 
+import { BeamCircle } from "./lightswind/beam-circle"
+
 import './../styles/Socials.css'
 
 const socials=[

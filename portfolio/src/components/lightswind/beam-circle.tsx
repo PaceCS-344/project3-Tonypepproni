@@ -1,6 +1,7 @@
 "use client";
 import React, { useMemo } from "react";
-import { motion, Transition } from "framer-motion";
+import { motion } from "framer-motion";
+import type { Transition } from "framer-motion";
 import { Sun, Cloud, MessageSquare, Briefcase, Zap } from "lucide-react";
 
 // --- Types ---
