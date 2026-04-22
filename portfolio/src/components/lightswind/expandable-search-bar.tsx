@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, X, Command } from "lucide-react";
-import { cn } from "../lib/utils";
+import { cn } from "./../../lib/utils.d.ts";
 
 interface ExpandableSearchBarProps {
   /** Optional placeholder text */

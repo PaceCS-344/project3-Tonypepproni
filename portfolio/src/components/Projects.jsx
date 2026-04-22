@@ -1,6 +1,7 @@
 import SkillTag from "./SkillTag"
 
 import './../styles/Sections.css'
+import useGitHubRepos from './../hooks/useGitHubRepos';
 
 export const projects = [
     {name:'Tidal Hudson',desc:'A backend to pull and clean data from the USGS to be used by a unity app',tags:['Python','Jira','USGS API'],repoLink:'https://github.com/Tonypepproni/Tidal-Estuary'},
@@ -12,6 +13,9 @@ export const projects = [
   ]
 
 function Projects(){
+
+    const { repos, loading, error } =useGitHubRepos('Tonypepproni');
+
     return(
         <div id="projects">
             <h2>Projects</h2>
@@ -20,6 +24,16 @@ function Projects(){
                     <Card key={index} project={project} />
                 ))}
             </div>
+            <h2>API part</h2>
+            {repos.map((repo,index)=>(
+                <div key={index}>
+                    <h3>{repo.name}</h3>
+                    <h4>{repo.description}</h4>
+                    <h4>{repo.language}</h4>
+                    <h4>{repo.visibility}</h4>
+                </div>
+            ))}
+            
         </div>
     )
 }

@@ -1,5 +1,7 @@
 import { HamburgerMenuOverlay } from "./lightswind/hamburger-menu-overlay"
 
+import "./../styles/nav.css"
+
 const menuItems = [
     {label:"About Me",href:'#aboutMe'},
     {label:"Skills",href:'#skills'},
@@ -17,6 +19,7 @@ function Nav(){
             overlayBackground="#6b22c5"
             onOpen={() => console.log("Menu opened")}
             onClose={() => console.log("Menu closed")}
+            className="NavDrop"
             />
             <h3>Nicole Rossi</h3>
         </div>

@@ -1,0 +1,9 @@
+button{
+    width: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.NavDrop{
+    padding: 10px;
+}
