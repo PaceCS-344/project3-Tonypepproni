@@ -42,10 +42,23 @@ function Card({ repo }){
                 isOpen={modalIsOpen}
                 onRequestClose={() => setModalIsOpen(false)}
                 contentLabel={repo.name}
+                className={"modal"}
             >
-                <button onClick={() => setModalIsOpen(false)}>Close</button>
-                <h1>{repo.name}</h1>
-                <p>{repo.description}</p>
+                <button onClick={() => setModalIsOpen(false)}>X</button>
+                <div className='modalCont'>
+                    <h1>{repo.name}</h1>
+                    <div className='modMain'>
+                        <p>{repo.description}</p>
+                        <ul>
+                            <li>Star Count {repo.stargazers_count}</li>
+                            <li>Fork Count {repo.fork_count}</li>
+                            <li>Last Update {repo.updated_at}</li>
+                            <li>Full Repo Name {repo.full_name}</li>
+                            <li>Issue Count {repo.open_issues}</li>
+                        </ul>
+                    </div>
+                    <h3>Languges: {repo.language}</h3>
+                </div>
             </Modal>
         </div>
     )

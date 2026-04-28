@@ -1,6 +1,87 @@
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    overflow-x: hidden;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width: 768px) {
+    #aboutMe, #projects, #skills {
+        width: 100vw;
+        margin: 0px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #aboutMe {
+        padding-top: 30px;
+        align-items: center;
+    }
+
+    #aboutMe p {
+        width: 90% !important;
+        text-align: center;
+    }
+
+    #aboutMe #carouselWrapper{
+        display: none;
+    }
+
+    #aboutMe #row {
+        flex-direction: column !important;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        margin-top: 50px;
+        gap: 40px;
+    }
+
+    #aboutMe #row #personal {
+        width: 90vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #aboutMe #row #socCon {
+        width: 90vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #aboutMe li {
+        text-align: center;
+    }
+
+    #skills .SkillCard {
+        width: 90vw !important;
+        margin: 20px auto !important;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #projects #ProjCard .Card {
+        width: 90vw !important;
+        margin: 20px auto;
+    }
+
+    .modal .modalCont .modMain {
+        flex-direction: column;
+        width: 90vw !important;
+    }
+}
+
 #aboutMe, #projects, #skills{
-    width: 90vw;
-    margin: 40px;
     min-height:100svh;
     padding-top: 60px;
 }
@@ -10,6 +91,15 @@
    justify-content: flex-start;
    align-items: center;
 }
+
+#aboutMe li{
+    margin: 10px;
+}
+
+#aboutMe p {
+    width: 50%;
+}
+
 #aboutMe #row{
     display: flex;
     justify-content: center;
@@ -42,6 +132,9 @@
 #skills .SkillCard .skillTagRow {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 #projects #ProjCard {
@@ -72,4 +165,26 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal{
+    background-color: rgb(20, 20, 44);
+    z-index: 1000;
+    margin-top: 90px;
+}
+
+.modal .modalCont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal .modalCont .modMain {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 50%;
 }

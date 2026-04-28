@@ -46,7 +46,7 @@ function Skills(){
             <h2>Skills</h2>
             <ExpandableSearchBar
                 placeholder='Search a Skill'
-                onChange={setQuery}  // ✅ was onSearch
+                onChange={setQuery} 
             />
             {display.length === 0
                 ? <p>No skills match "{query}"</p>
