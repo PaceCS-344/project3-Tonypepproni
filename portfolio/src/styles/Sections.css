@@ -56,11 +56,17 @@
     border: 1px solid white;
     border-radius: 25px;
 
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+
     width: 33%;
-    height: 300px;
+    min-height: 300px;
     margin: 50px;
     padding: 20px;
 }
+
 
 #projects #ProjCard .Card .TagRow{
     display: flex;

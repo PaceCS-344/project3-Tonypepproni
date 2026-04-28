@@ -1,55 +1,53 @@
+import { useState } from 'react';
+import Modal from 'react-modal';
 import SkillTag from "./SkillTag"
-
 import './../styles/Sections.css'
 import useGitHubRepos from './../hooks/useGitHubRepos';
 
-export const projects = [
-    {name:'Tidal Hudson',desc:'A backend to pull and clean data from the USGS to be used by a unity app',tags:['Python','Jira','USGS API'],repoLink:'https://github.com/Tonypepproni/Tidal-Estuary'},
-    {name:'Water Reports API',desc:'An API to access data from paces Water Report MariaDB',tags:['FastAPI','MariaDB','Python'],repoLink:null},
-    {name:'National Park Map Maker',desc:'A Folium tool to easily map national park locations',tags:['Folium','Pandas','Python'],repoLink:'https://github.com/Tonypepproni/National-Park-Visitation'},
-    {name:"Portfolio Website",desc:"A modern portfolio page to demonstrate skills and projects",tags:['React','JavaScript','CSS','Vite'],repoLink:'https://github.com/Tonypepproni/portfolio'},
-    {name:"Blue Colab API",desc:"Refactoring Pace's Bluecolab API to Timescale and add new routes",tags:['Python','FastAPI','Timescale','Docker'],repoLink:null},
-    {name:"Emitre Website",desc:'Redesigning Pace University Emitre team static website to a modern looking dynamic page',tags:['Python','Flask','Jinja','HTML5','CSS'],repoLink:'https://github.com/Tonypepproni/Cis102-emitre'}
-  ]
+Modal.setAppElement('#root') // ✅ required by react-modal
 
 function Projects(){
+    const { repos, loading, error } = useGitHubRepos('Tonypepproni');
 
-    const { repos, loading, error } =useGitHubRepos('Tonypepproni');
+    if (loading) return <p>Loading projects...</p>
+    if (error) return <p>Error: {error}</p>
 
     return(
         <div id="projects">
             <h2>Projects</h2>
             <div id="ProjCard">
-                {projects.map((project,index)=>(
-                    <Card key={index} project={project} />
+                {repos.map((repo, index) => (
+                    <Card key={repo.id} repo={repo} />
                 ))}
-            </div>
-            <h2>API part</h2>
-            {repos.map((repo,index)=>(
-                <div key={index}>
-                    <h3>{repo.name}</h3>
-                    <h4>{repo.description}</h4>
-                    <h4>{repo.language}</h4>
-                    <h4>{repo.visibility}</h4>
-                </div>
-            ))}
-            
+            </div>            
         </div>
     )
 }
 
-function Card({project}){
+function Card({ repo }){
+    const [modalIsOpen, setModalIsOpen] = useState(false)  // ✅ state for modal
+
     return(
-    <div className="Card">
-        <h3>{project.name}</h3>
-        <p>{project.desc}</p>
-        <a href={project.repoLink}>Github</a>
-        <div className="TagRow">
-            {project.tags.map((tag,index)=>(
-                <SkillTag key={index} skill={tag} />
-            ))}
+        <div className="Card">
+            <h3>{repo.name}</h3>
+            <p>{repo.description}</p>
+            <a href={repo.html_url} target="_blank" rel="noreferrer">Github</a>
+            <div className="TagRow">
+                {repo.topics.map((topic, index) => (
+                    <SkillTag key={index} skill={topic} />
+                ))}
+            </div>
+            <button onClick={() => setModalIsOpen(true)}>Learn More!</button>
+            <Modal
+                isOpen={modalIsOpen}
+                onRequestClose={() => setModalIsOpen(false)}
+                contentLabel={repo.name}
+            >
+                <button onClick={() => setModalIsOpen(false)}>Close</button>
+                <h1>{repo.name}</h1>
+                <p>{repo.description}</p>
+            </Modal>
         </div>
-    </div>
     )
 }
 
