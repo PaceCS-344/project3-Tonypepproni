@@ -61,8 +61,8 @@ body, html {
     }
 
     #skills .SkillCard {
-        width: 90vw !important;
-        margin: 20px auto !important;
+        width: min(80svw, calc(100vw - 40px)) !important; /* was 80svw */
+        margin: 60px auto !important; /* was margin: 60px — auto centers it */
         padding: 20px;
         display: flex;
         flex-direction: column;
@@ -114,19 +114,26 @@ body, html {
     width: 40svw;
 }
 
-
+#skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
 
 #skills .SkillCard {
-    width: 80svw;
+    width: 95%;
+    max-width: 1200px;
     border: 1px solid blue;
     border-radius: 25px;
 
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
 
     padding: 30px;
-    margin: 60px;
+    margin: 60px auto;
 }
 
 #skills .SkillCard .skillTagRow {

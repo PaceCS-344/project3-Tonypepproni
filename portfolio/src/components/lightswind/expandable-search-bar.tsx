@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, X, Command } from "lucide-react";
-import { cn } from "./../../lib/utils.d.ts";
+import { cn } from "../../lib/utils";
 
 interface ExpandableSearchBarProps {
   /** Optional placeholder text */
@@ -68,7 +68,6 @@ export function ExpandableSearchBar({
     <div
       ref={containerRef}
       className={cn("relative flex items-center justify-end", className)}
-      // Ensures the container takes up the max space when expanded to prevent layout shifts if needed
       style={{ width: isExpanded ? expandedWidth : "2.5rem" }}
     >
       <motion.form

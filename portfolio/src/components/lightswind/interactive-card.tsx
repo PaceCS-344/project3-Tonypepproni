@@ -65,7 +65,7 @@ export const InteractiveCard = ({
         perspective: 1000,
         borderRadius,
       }}
-      className="relative w-[320px] aspect-[17/21] isolate"
+      className="relative w-full aspect-auto isolate"
     >
       <motion.div
         style={{
@@ -74,7 +74,7 @@ export const InteractiveCard = ({
           transformStyle: "preserve-3d",
           transition: `transform ${transitionDuration}s ${transitionEasing}`,
         }}
-        className="w-full h-full rounded-xl overflow-hidden border shadow-lg"
+        className="w-full h-full rounded-xl overflow-hidden shadow-lg"
       >
         {/* Background Interactive Layer */}
         <motion.div

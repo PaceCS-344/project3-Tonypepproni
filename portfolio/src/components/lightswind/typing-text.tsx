@@ -2,12 +2,9 @@
 
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
-import React, {
-  ElementType,
-  ReactNode,
-  useEffect,
-  useState,
-} from "react";
+import { isValidElement } from "react";
+import type { ElementType, ReactNode } from "react";
+import { useEffect, useState } from "react";
 import { cn } from "../../lib/utils";
 
 export interface TypingTextProps {
@@ -35,7 +32,7 @@ export const TypingText = ({
   color = "text-white",
   letterSpacing = "tracking-wide",
   align = "left",
-  loop = false,
+  loop: _loop = false,
 }: TypingTextProps) => {
   const [textContent, setTextContent] = useState<string>("");
 
@@ -47,11 +44,11 @@ export const TypingText = ({
       if (Array.isArray(node)) {
         return node.map(extractText).join("");
       }
-      if (
-        React.isValidElement(node) &&
-        typeof node.props.children !== "undefined"
-      ) {
-        return extractText(node.props.children);
+      if (isValidElement(node)) {
+        const { children } = node.props as { children?: ReactNode };
+        if (typeof children !== "undefined") {
+          return extractText(children);
+        }
       }
       return "";
     };
