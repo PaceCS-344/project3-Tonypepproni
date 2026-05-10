@@ -125,7 +125,7 @@ body, html {
 #skills .SkillCard {
     width: 95%;
     max-width: 1200px;
-    border: 1px solid blue;
+    border: 5px solid #A47DAB;
     border-radius: 25px;
 
     display: flex;

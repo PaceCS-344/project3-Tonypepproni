@@ -67,7 +67,7 @@ function SkillSection({ skills, query, getRef }){
     return(
         <InteractiveCard 
             className='SkillCard'
-            InteractiveColor='#9D00FF'
+            InteractiveColor='#CEA2FD'
         >
             <h2>{skills.name}</h2>
             <div className='skillTagRow'>

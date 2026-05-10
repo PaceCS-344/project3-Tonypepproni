@@ -1,5 +1,5 @@
 .tag{
-    border: 1px solid rgb(6, 186, 6);
+    border: 1px solid #74B72E;
     border-radius: 10px;
 
     margin: 10px 10px 0px 10px;
@@ -7,6 +7,10 @@
 
     min-width: 100px;
 }
+
+.tag:hover{
+    cursor: default;
+} 
 
 .tag.highlighted {
     background-color: yellow;
