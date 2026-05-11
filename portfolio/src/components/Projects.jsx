@@ -30,7 +30,7 @@ function Card({ repo }){
     return(
         <div className="Card">
             <h3>{repo.name}</h3>
-            <p>{repo.description}</p>
+            <p className='desc'>{repo.description}</p>
             <a href={repo.html_url} target="_blank" rel="noreferrer">Github</a>
             <div className="TagRow">
                 {repo.topics.map((topic, index) => (
